@@ -1,0 +1,22 @@
+/*
+Theme Name: kotenhanagara
+Layout: Content-Sidebar
+*/
+
+.content-area {
+	float: left;
+	margin: 0 40px 0 0;
+	width: 580px;
+}
+.site-content {
+	width: 100%;
+}
+.site-main .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 303px;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}

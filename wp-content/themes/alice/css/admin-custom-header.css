@@ -1,0 +1,7 @@
+#site-title {
+	font-weight: 300;
+}
+
+.custom-header #site-title a {
+	font-style: italic;
+}
