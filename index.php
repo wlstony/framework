@@ -11,6 +11,10 @@ $params = $params_str ? explode('.', $params_str) : null;
 $times = substr_count($url_str, '/');
 
 switch($times) {
+    case 0:
+	$controller = 'index';
+	$action = 'index';
+	break;
     case 1:
         $controller = substr($url_str, 1); 
         $action = 'index';
