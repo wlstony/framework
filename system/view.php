@@ -12,6 +12,10 @@ class View {
 		$this->view_arr = array('header', 'body', 'footer', 'left', 'right');
 	}
 
+    function factory() {
+        return new View();    
+    }
+
 	/*one view is divided into 5 parts: left, header, body, foooter, right
 	*$part: one of the 5 parts
 	*$path: location of the file which consists of the view represents one part

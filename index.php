@@ -1,8 +1,11 @@
 <?php
 define('FRAME_ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('VIEW_PATH', FRAME_ROOT . '/views/');
+define('SITE_ROOT', $_SERVER['SCRIPT_URI']);
 
 $url_str = $script_url = rtrim($_SERVER['SCRIPT_URL'], '/');
 $first_dot = strpos($script_url, '.');
+$params_str = '';
 if($first_dot) {
     $params_str = substr($script_url, $first_dot + 1);
     $url_str = substr($script_url, 0, $first_dot);
@@ -31,10 +34,26 @@ switch($times) {
 
 dispatch($controller, $action, $params);
 
-function dispatch($controller='index', $action='index', $params) {
-    $controller_path = FRAME_ROOT . "controllers/{$controller}.php";
-    var_dump($controller_path);
-   echo "<pre>";
-    var_dump( func_get_args());
-   echo "</pre>";
+function dispatch($controller='index', $action='index', $params='') {
+    $controller_path = FRAME_ROOT . "/controllers/{$controller}.controller.php";
+    if(file_exists($controller_path)) {
+        require_once $controller_path;
+    }
+    else{
+        //postpone to deal with the error
+        die('controller does not exist!');
+    }
+   $controller =  ucfirst($controller) . '_Controller';
+   $controller = new $controller; 
+   $func = $action . 'Action';
+   $params_str = is_array($params) ? implode(', ', $params) : $params;
+   if(method_exists($controller, $func)){
+        $controller->$func($params_str);
+   }
+   else{
+       die('no action');
+   }
+
+
+
 }

@@ -1,0 +1,4 @@
+* {margin: 0 auto; }
+.clearFloat {float:none; clear: both;}
+#body_container {width: 1000px; overflow: hidden; }
+.left {float: left;}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <base href="<?=SITE_ROOT ?>" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/common.css" />
+  <title><?php echo isset($title) ? $title : 'Welcome to come our website' ?></title>
+</head>
+<body>
+<div id="body_container">
+    <div id="body_header" class="clearFloat">
+        <?php echo isset($heaer) ? $header : ''; ?>
+    </div>
+    <div id="body_content"> 
+        <?php if($left) : ?>
+        <div id="content_left" class="left"><?php echo $left; ?></div>
+        <?php endif; ?>
+        <div id="content_middle" class="<?php if($left): ?>left <?php endif; ?>">middle</div>
+        <?php if($right) : ?>
+        <div id="content_right" class="left"><?php echo $right; ?></div>
+        <?php endif; ?>
+        <br class="clearFloat" />
+    </div>
+    <div id="body_footer" class="clearFloat">
+        <?php echo isset($footer) ? $footer : ''; ?>
+    </div>
+</div>
+</body>
+</html>
