@@ -24,6 +24,7 @@ class View {
 	function add_part($part, $path, $params=array()) {
 		if(in_array($part, $this->view_arr)) {
 			$part_file = VIEW_PATH . $path . '.phtml';
+
 			if(! file_exists($part_file)) {
 				$part = '_' . $part;
 				$this->$part = "$part_file does not exist in your project!";
@@ -31,6 +32,7 @@ class View {
 			}
 			$params = is_array($params) ? $params : (array)$params;
 			extract($params);
+            ob_end_clean();
 			ob_start();
 			include_once $part_file;
 			$part_content = ob_get_contents();
@@ -54,6 +56,7 @@ class View {
 									'body' => $this->_body, 
 									'right' => $this->_right, 
 									'footer' => $this->_footer);
+
 		extract($params);
 		
 		ob_start();

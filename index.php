@@ -4,6 +4,7 @@ define('VIEW_PATH', FRAME_ROOT . '/views/');
 define('SITE_ROOT', $_SERVER['SCRIPT_URI']);
 
 $url_str = $script_url = rtrim($_SERVER['SCRIPT_URL'], '/');
+
 $first_dot = strpos($script_url, '.');
 $params_str = '';
 if($first_dot) {

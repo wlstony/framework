@@ -5,6 +5,7 @@ class Index_Controller extends Base_Controller {
     
     function indexAction() {
         $view = View::factory();
+        $view->add_part('header', 'header');
         $view->show();
     }
 
