@@ -16,14 +16,15 @@
         <?php if($left) : ?>
         <div id="content_left" class="left"><?php echo $left; ?>left</div>
         <?php endif; ?>
-        <div id="content_middle" class="<?php if($left): ?>left <?php endif; ?>"></div>
+        <div id="content_middle" class="<?php if($left): ?>left <?php endif; ?>">
+        <?php echo isset($body) ? $body : ''; ?>
+        </div>
         <?php if($right) : ?>
         <div id="content_right" class="left"><?php echo $right; ?></div>
         <?php endif; ?>
         <br class="clearFloat" />
     </div>
     <div id="body_footer" class="clearFloat">
-        footer
         <?php echo isset($footer) ? $footer : ''; ?>
     </div>
 </div>
