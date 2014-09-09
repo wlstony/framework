@@ -1,7 +1,7 @@
 <div id="login_container">
     <div><h1>Welcome to use 'MRFC' to book channel class!</h1></div>
     <div>
-        <form method="post" action="">
+        <form method="post" action="#" onsubmit="return validate_form(this);">
             <table>
                 <tr>
                     <td>username: </td>
@@ -22,3 +22,15 @@
         </form>
     </div>
 </div>
+<script type="text/javascript" src="<?=SITE_ROOT ?>/js/form.js"></script>
+<script type="text/javascript">
+   function _showmsg(msg) {
+        alert(msg);    
+   }
+   function validate_form(form) {
+       var criteria = {username:{empty: '用户名不能为空!'},
+                        password:{empty: '密码不能为空!'}}
+       var myform = new Form(form, criteria);
+       myform.validate();
+   }
+</script>
