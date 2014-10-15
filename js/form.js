@@ -16,7 +16,7 @@ var Form = function(form, criteria) {
             }
             else {
                 chkval = eval('form.' + key + '.value');
-                chkval = chkval ? chkval : 'null';
+                chkval = chkval ? chkval.trim() : 'null';
             }
             
             jQuery.each(val, function(k, v) {
