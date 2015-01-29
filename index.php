@@ -54,7 +54,4 @@ function dispatch($controller='index', $action='index', $params='') {
    else{
        die('no action');
    }
-
-
-
 }
