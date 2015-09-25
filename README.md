@@ -18,3 +18,8 @@ try to develop a very simple php framework, so as to improve my technical skills
     DirectoryIndex index.php
 </Directory>
     ~                        
+
+
+#Be carful
+1. File name must be lower case
+2. All the controllers must be in controller directory, can not create directory in it.
